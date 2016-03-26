@@ -30,8 +30,6 @@ System.register(['angular2/core', './navigation-bar.component', './sidebar.compo
             Window = (function () {
                 function Window(sidebarService) {
                     this.sidebarService = sidebarService;
-                    console.log('Window constructor, service.name = ' + sidebarService.name);
-                    sidebarService.name = 'Window instance';
                 }
                 Window = __decorate([
                     core_1.Component({

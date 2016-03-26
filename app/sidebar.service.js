@@ -24,11 +24,10 @@ System.register(['angular2/core', 'rxjs/Subject'], function(exports_1, context_1
             SidebarService = (function () {
                 function SidebarService() {
                     this.sidebarToggledSource = new Subject_1.Subject();
-                    this.name = 'unassigned';
                     this.sidebarToggled$ = this.sidebarToggledSource.asObservable();
                 }
                 SidebarService.prototype.toggleSidebar = function (collapsed) {
-                    this.sidebarToggledSource.next(collapsed);
+                    this.sidebarToggledSource.next({});
                 };
                 SidebarService = __decorate([
                     core_1.Injectable(), 

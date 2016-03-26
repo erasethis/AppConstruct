@@ -24,18 +24,15 @@ System.register(['angular2/core', './sidebar.service'], function(exports_1, cont
             HamburgerButton = (function () {
                 function HamburgerButton(sidebarService) {
                     this.sidebarService = sidebarService;
-                    console.log('hamburger, service.name= ' + sidebarService.name);
                 }
                 HamburgerButton.prototype.toggleSidebar = function () {
                     this.sidebarService.toggleSidebar(true);
-                    console.log('called on service');
                 };
                 ;
                 HamburgerButton = __decorate([
                     core_1.Component({
                         selector: 'x-hamburger-button',
-                        template: "\n        <div (click)=\"toggleSidebar()\">\n           <i class=\"fa fa-bars\">\n              <a href=\"#\"></a>\n           </i>\n        </div>\n        ",
-                        providers: [sidebar_service_1.SidebarService]
+                        template: "\n        <div (click)=\"toggleSidebar()\">\n           <i class=\"fa fa-bars\">\n              <a href=\"#\"></a>\n           </i>\n        </div>\n        "
                     }), 
                     __metadata('design:paramtypes', [sidebar_service_1.SidebarService])
                 ], HamburgerButton);

@@ -9,16 +9,12 @@ import { SidebarService } from './sidebar.service';
               <a href="#"></a>
            </i>
         </div>
-        `,
-    providers: [SidebarService]
+        `
 })
 
 export class HamburgerButton {
-    constructor (private sidebarService: SidebarService) { 
-        console.log('hamburger, service.name= ' + sidebarService.name);
-    }
+    constructor (private sidebarService: SidebarService) { }
     toggleSidebar() {
         this.sidebarService.toggleSidebar(true);
-        console.log('called on service');
     };
 }

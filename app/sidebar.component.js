@@ -26,7 +26,6 @@ System.register(['angular2/core', './sidebar.service'], function(exports_1, cont
                     var _this = this;
                     this.sidebarService = sidebarService;
                     this.collapsed = false;
-                    console.log('sidebar, service.name= ' + sidebarService.name);
                     sidebarService.sidebarToggled$.subscribe(function (data) {
                         _this.collapsed = !_this.collapsed;
                         console.log('event caught');
@@ -35,8 +34,7 @@ System.register(['angular2/core', './sidebar.service'], function(exports_1, cont
                 Sidebar = __decorate([
                     core_1.Component({
                         selector: "x-sidebar",
-                        template: "\n        <div>\n        </div>\n        ",
-                        providers: [sidebar_service_1.SidebarService]
+                        template: "\n        <div>\n        </div>\n        "
                     }), 
                     __metadata('design:paramtypes', [sidebar_service_1.SidebarService])
                 ], Sidebar);

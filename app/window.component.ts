@@ -17,8 +17,5 @@ import { SidebarService } from './sidebar.service';
 })
 
 export class Window {
-    constructor (private sidebarService: SidebarService) {
-        console.log('Window constructor, service.name = ' + sidebarService.name);
-        sidebarService.name = 'Window instance';    
-    }
+    constructor (private sidebarService: SidebarService) { }
 }

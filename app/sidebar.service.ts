@@ -3,10 +3,10 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class SidebarService {
-    private sidebarToggledSource = new Subject<boolean>();
-    name: string = 'unassigned';
+    private sidebarToggledSource = new Subject();
     sidebarToggled$ = this.sidebarToggledSource.asObservable();
+    
     toggleSidebar(collapsed: boolean) {
-        this.sidebarToggledSource.next(collapsed);
+        this.sidebarToggledSource.next({});
     }
 }

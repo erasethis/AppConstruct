@@ -6,16 +6,14 @@ import { SidebarService } from './sidebar.service';
     template: `
         <div>
         </div>
-        `,
-    providers: [SidebarService]
+        `
 })
 
 export class Sidebar {
     collapsed: boolean = false;
     constructor (private sidebarService: SidebarService) { 
-        console.log('sidebar, service.name= ' + sidebarService.name);
         sidebarService.sidebarToggled$.subscribe(data => {
-             this.collapsed = !this.collapsed
+             this.collapsed = !this.collapsed;
              console.log('event caught');
         });
     }
