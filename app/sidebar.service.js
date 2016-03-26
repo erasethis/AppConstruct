@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'rxjs/Subject'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,28 +10,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, Subject_1;
     var SidebarService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (Subject_1_1) {
+                Subject_1 = Subject_1_1;
             }],
         execute: function() {
             SidebarService = (function () {
                 function SidebarService() {
-                    this.collapse = new core_1.EventEmitter();
-                    this.collapsed = false;
-                    this.toggle = function () {
-                        this.collapsed = !this.collapsed;
-                        this.collapse.emit(this.collapsed);
-                        console.log('emit = ' + this.collapsed);
-                    };
+                    this.sidebarToggledSource = new Subject_1.Subject();
+                    this.name = 'unassigned';
+                    this.sidebarToggled$ = this.sidebarToggledSource.asObservable();
                 }
-                __decorate([
-                    core_1.Output(), 
-                    __metadata('design:type', core_1.EventEmitter)
-                ], SidebarService.prototype, "collapse", void 0);
+                SidebarService.prototype.toggleSidebar = function (collapsed) {
+                    this.sidebarToggledSource.next(collapsed);
+                };
                 SidebarService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

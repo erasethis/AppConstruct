@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './sidebar.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,29 +10,35 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, sidebar_service_1;
     var Sidebar;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (sidebar_service_1_1) {
+                sidebar_service_1 = sidebar_service_1_1;
             }],
         execute: function() {
             Sidebar = (function () {
-                function Sidebar() {
+                function Sidebar(sidebarService) {
+                    var _this = this;
+                    this.sidebarService = sidebarService;
                     this.collapsed = false;
+                    console.log('sidebar, service.name= ' + sidebarService.name);
+                    sidebarService.sidebarToggled$.subscribe(function (data) {
+                        _this.collapsed = !_this.collapsed;
+                        console.log('event caught');
+                    });
                 }
-                Sidebar.prototype.onToggled = function (value) {
-                    this.collapsed = !this.collapsed;
-                    console.log('event caught');
-                };
-                ;
                 Sidebar = __decorate([
                     core_1.Component({
                         selector: "x-sidebar",
-                        template: "\n        <x-hamburger-button (toggled)=\"onToggled($event)\" [ngClass]=\"{collapsed: collapsed}\">\n        </x-hamburger-button>\n        "
+                        template: "\n        <div>\n        </div>\n        ",
+                        providers: [sidebar_service_1.SidebarService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [sidebar_service_1.SidebarService])
                 ], Sidebar);
                 return Sidebar;
             }());

@@ -1,13 +1,12 @@
-import { Injectable, Output, EventEmitter } from 'angular2/core';
+import { Injectable } from 'angular2/core';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-
 export class SidebarService {
-    @Output() collapse: EventEmitter<boolean> = new EventEmitter();
-    private collapsed = false;
-    toggle = function () {
-        this.collapsed = !this.collapsed;
-        this.collapse.emit(this.collapsed);
-        console.log('emit = ' + this.collapsed);
-    };
+    private sidebarToggledSource = new Subject<boolean>();
+    name: string = 'unassigned';
+    sidebarToggled$ = this.sidebarToggledSource.asObservable();
+    toggleSidebar(collapsed: boolean) {
+        this.sidebarToggledSource.next(collapsed);
+    }
 }

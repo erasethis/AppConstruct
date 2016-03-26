@@ -1,4 +1,4 @@
-System.register(['angular2/core', './navigation-bar.component', './sidebar.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './navigation-bar.component', './sidebar.component', './sidebar.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './navigation-bar.component', './sidebar.compo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, navigation_bar_component_1, sidebar_component_1;
+    var core_1, navigation_bar_component_1, sidebar_component_1, sidebar_service_1;
     var Window;
     return {
         setters:[
@@ -22,18 +22,25 @@ System.register(['angular2/core', './navigation-bar.component', './sidebar.compo
             },
             function (sidebar_component_1_1) {
                 sidebar_component_1 = sidebar_component_1_1;
+            },
+            function (sidebar_service_1_1) {
+                sidebar_service_1 = sidebar_service_1_1;
             }],
         execute: function() {
             Window = (function () {
-                function Window() {
+                function Window(sidebarService) {
+                    this.sidebarService = sidebarService;
+                    console.log('Window constructor, service.name = ' + sidebarService.name);
+                    sidebarService.name = 'Window instance';
                 }
                 Window = __decorate([
                     core_1.Component({
                         selector: 'x-window',
                         directives: [navigation_bar_component_1.NavigationBar, sidebar_component_1.Sidebar],
-                        template: "\n            <x-navigation-bar></x-navigation-bar>\n            <div>\n                <x-sidebar></x-sidebar>\n                <div class=\"content\"></div>\n            </div>\n        "
+                        template: "\n            <x-navigation-bar></x-navigation-bar>\n            <div>\n                <x-sidebar></x-sidebar>\n                <div class=\"content\"></div>\n            </div>\n        ",
+                        providers: [sidebar_service_1.SidebarService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [sidebar_service_1.SidebarService])
                 ], Window);
                 return Window;
             }());

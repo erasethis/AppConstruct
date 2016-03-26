@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
-import { NgClass } from 'angular2/common';
 import { NavigationBar } from './navigation-bar.component';
 import { Sidebar } from './sidebar.component';
+import { SidebarService } from './sidebar.service';
 
 @Component({
     selector: 'x-window',
@@ -12,9 +12,13 @@ import { Sidebar } from './sidebar.component';
                 <x-sidebar></x-sidebar>
                 <div class="content"></div>
             </div>
-        `
+        `,
+    providers: [SidebarService]
 })
 
 export class Window {
-
+    constructor (private sidebarService: SidebarService) {
+        console.log('Window constructor, service.name = ' + sidebarService.name);
+        sidebarService.name = 'Window instance';    
+    }
 }
