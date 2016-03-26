@@ -1,22 +1,18 @@
-import { Component, Input } from 'angular2/core';
-import { SidebarService } from './sidebar.service';
+import { Component } from 'angular2/core';
+import { HamburgerButton } from './hamburger-button.component';
 
 @Component({
     selector: "x-sidebar",
     template: `
-        <div (collapse)="onCollapse($event)" [ngClass]="{collapsed: collapsed}">
-            {{event | json}}
-        </div>
-        `,
-    providers: [SidebarService]
+        <x-hamburger-button (toggled)="onToggled($event)" [ngClass]="{collapsed: collapsed}">
+        </x-hamburger-button>
+        `
 })
 
 export class Sidebar {
     collapsed: boolean = false;
-    event: any;
-    constructor(private sidebarService: SidebarService) { }
-    onCollapse = function (e) {
-        alert('EVENT');
-      this.event = e;
+    onToggled (value) {
+        this.collapsed = !this.collapsed;
+        console.log('event caught');
     };
 }

@@ -1,5 +1,4 @@
-import { Component } from 'angular2/core';
-import { SidebarService } from './sidebar.service';
+import { Component, Output, EventEmitter } from 'angular2/core';
 
 @Component({
     selector: 'x-hamburger-button',
@@ -9,13 +8,13 @@ import { SidebarService } from './sidebar.service';
               <a href="#"></a>
            </i>
         </div>
-        `,
-    providers: [SidebarService]
+        `
 })
 
 export class HamburgerButton {
-    constructor(private sidebarService: SidebarService) { }
-    toggleSidebar = function () {
-        this.sidebarService.toggle();
+    @Output() toggled = new EventEmitter();
+    toggleSidebar() {
+        this.toggled.emit(null);
+        console.log('toggled.emit()');
     };
 }

@@ -1,4 +1,4 @@
-System.register(['angular2/core', './sidebar.service'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,29 @@ System.register(['angular2/core', './sidebar.service'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, sidebar_service_1;
+    var core_1;
     var Sidebar;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (sidebar_service_1_1) {
-                sidebar_service_1 = sidebar_service_1_1;
             }],
         execute: function() {
             Sidebar = (function () {
-                function Sidebar(sidebarService) {
-                    this.sidebarService = sidebarService;
+                function Sidebar() {
                     this.collapsed = false;
-                    this.onCollapse = function (e) {
-                        alert('EVENT');
-                        this.event = e;
-                    };
                 }
+                Sidebar.prototype.onToggled = function (value) {
+                    this.collapsed = !this.collapsed;
+                    console.log('event caught');
+                };
+                ;
                 Sidebar = __decorate([
                     core_1.Component({
                         selector: "x-sidebar",
-                        template: "\n        <div (collapse)=\"onCollapse($event)\" [ngClass]=\"{collapsed: collapsed}\">\n            {{event | json}}\n        </div>\n        ",
-                        providers: [sidebar_service_1.SidebarService]
+                        template: "\n        <x-hamburger-button (toggled)=\"onToggled($event)\" [ngClass]=\"{collapsed: collapsed}\">\n        </x-hamburger-button>\n        "
                     }), 
-                    __metadata('design:paramtypes', [sidebar_service_1.SidebarService])
+                    __metadata('design:paramtypes', [])
                 ], Sidebar);
                 return Sidebar;
             }());
