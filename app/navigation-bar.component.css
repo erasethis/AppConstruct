@@ -1,0 +1,13 @@
+.x-navigation-bar  {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    color: #eee;
+    background-color: black;
+    text-align: center;
+    line-height: 48px;
+    height: 48px;
+}
+.x-navigation-bar .title {
+    width: 100%;
+}

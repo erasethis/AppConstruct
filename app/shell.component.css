@@ -1,0 +1,11 @@
+.x-shell {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.x-shell .slideout {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}

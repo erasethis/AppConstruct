@@ -1,0 +1,24 @@
+div {
+    width: 180px;
+    transition: all 0.25s ease-in-out;
+}
+div.collapsed {
+    width: 0;
+    transition: all 0.25s ease-in-out;
+}
+div ul {
+    list-style: none;
+    color: #eee;
+    padding: 14px;
+    margin: 0;
+}   
+div ul li {
+    white-space: nowrap;
+    margin-left: 0;
+    transition: all 0.25s ease-in-out;
+}
+div.collapsed ul li {
+    white-space: nowrap;
+    margin-left: -180px;
+    transition: all 0.25s ease-in-out;
+}

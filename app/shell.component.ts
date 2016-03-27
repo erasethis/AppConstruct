@@ -5,7 +5,8 @@ import { Sidebar } from './sidebar.component';
 @Component({
     selector: 'x-shell',
     directives: [NavigationBar, Sidebar],
-    templateUrl: 'app/shell.component.html'
+    templateUrl: 'app/shell.component.html',
+    styleUrls: ['app/shell.component.css']
 })
 
 export class Shell {

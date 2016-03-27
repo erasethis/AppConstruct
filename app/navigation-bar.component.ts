@@ -4,10 +4,8 @@ import { HamburgerButton } from './hamburger-button.component';
 @Component({
     selector: 'x-navigation-bar',
     directives: [HamburgerButton],
-    template: `
-            <x-hamburger-button></x-hamburger-button>
-            <span class="title">Title</span>
-        `
+    templateUrl: 'app/navigation-bar.component.html',
+    styleUrls: ['app/navigation-bar.component.css']
 })
 
 export class NavigationBar {

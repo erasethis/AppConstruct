@@ -8,42 +8,7 @@ body {
     font-size: 14pt;
 }
 
-x-shell {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
-x-navigation-bar {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    color: #eee;
-    background-color: black;
-    text-align: center;
-    line-height: 48px;
-    height: 48px;
-}
-
-x-shell > div {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
-
-x-navigation-bar .title {
-    width: 100%;
-}
-
-x-hamburger-button {
-    width: 48px;
-    height: 48px;  
-}
-
-x-hamburger-button:hover {
-    color: #fff;
-    background-color: #222;
-}
 
 x-sidebar {
     flex-grow: 0;

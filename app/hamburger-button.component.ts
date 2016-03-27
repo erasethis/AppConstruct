@@ -3,13 +3,8 @@ import { SidebarService } from './sidebar.service';
 
 @Component({
     selector: 'x-hamburger-button',
-    template: `
-        <div (click)="toggleSidebar()">
-           <i class="fa fa-bars">
-              <a href="#"></a>
-           </i>
-        </div>
-        `
+    templateUrl: 'app/hamburger-button.component.html',
+    styleUrls: ['app/hamburger-button.component.css']
 })
 
 export class HamburgerButton {
