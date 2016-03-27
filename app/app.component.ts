@@ -1,17 +1,12 @@
 import { Component } from 'angular2/core';
-import { NavigationBar } from './navigation-bar.component';
-import { Sidebar } from './sidebar.component';
+import { Shell } from './shell.component';
 import { SidebarService } from './sidebar.service';
 
 @Component({
     selector: 'x-app',
-    directives: [NavigationBar, Sidebar],
+    directives: [Shell],
     template: `
-            <x-navigation-bar></x-navigation-bar>
-            <div>
-                <x-sidebar></x-sidebar>
-                <div class="content"></div>
-            </div>
+            <x-shell></x-shell>
         `,
     providers: [SidebarService]
 })
