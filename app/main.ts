@@ -1,6 +1,6 @@
 import { bootstrap } from "angular2/platform/browser";
-import { Window } from "./window.component";
+import { App } from "./app.component";
 
-bootstrap(Window)
+bootstrap(App)
     .then(success => console.log("bootstrap succesful"))
     .catch(error => console.log("bootstrap failed: " + error));

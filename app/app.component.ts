@@ -4,7 +4,7 @@ import { Sidebar } from './sidebar.component';
 import { SidebarService } from './sidebar.service';
 
 @Component({
-    selector: 'x-window',
+    selector: 'x-app',
     directives: [NavigationBar, Sidebar],
     template: `
             <x-navigation-bar></x-navigation-bar>
@@ -16,6 +16,6 @@ import { SidebarService } from './sidebar.service';
     providers: [SidebarService]
 })
 
-export class Window {
+export class App {
     constructor (private sidebarService: SidebarService) { }
 }
