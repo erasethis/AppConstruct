@@ -3,7 +3,8 @@ import { ShellService } from './shell.service';
 
 @Component({
     selector: 'x-hamburger-button',
-    templateUrl: 'app/hamburger-button.component.html'
+    templateUrl: 'app/hamburger-button.component.html',
+    styleUrls: ['app/hamburger-button.component.css']
 })
 
 export class HamburgerButton {
