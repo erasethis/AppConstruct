@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { SidebarService } from './sidebar.service';
+import { ShellService } from './shell.service';
 
 @Component({
     selector: "x-sidebar",
@@ -9,8 +9,8 @@ import { SidebarService } from './sidebar.service';
 
 export class Sidebar {
     collapsed: boolean = false;
-    constructor (private sidebarService: SidebarService) { 
-        sidebarService.sidebarToggled$.subscribe(data => {
+    constructor (private shellService: ShellService) { 
+        shellService.sidebarToggled$.subscribe(data => {
              this.collapsed = !this.collapsed;
         });
     }

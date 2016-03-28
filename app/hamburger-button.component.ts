@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { SidebarService } from './sidebar.service';
+import { ShellService } from './shell.service';
 
 @Component({
     selector: 'x-hamburger-button',
@@ -8,8 +8,8 @@ import { SidebarService } from './sidebar.service';
 })
 
 export class HamburgerButton {
-    constructor (private sidebarService: SidebarService) { }
+    constructor (private shellService: ShellService) { }
     toggleSidebar() {
-        this.sidebarService.toggleSidebar(true);
+        this.shellService.toggleSidebar(true);
     };
 }

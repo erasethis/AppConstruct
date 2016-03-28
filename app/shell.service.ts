@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class SidebarService {
+export class ShellService {
     private sidebarToggledSource = new Subject();
     sidebarToggled$ = this.sidebarToggledSource.asObservable();
     
