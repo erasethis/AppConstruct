@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, ViewChild } from 'angular2/core';
 import { NavigationBar } from './navigation-bar.component';
 import { Sidebar } from './sidebar.component';
 
@@ -10,5 +10,8 @@ import { Sidebar } from './sidebar.component';
 })
 
 export class Shell {
-    
+    @ViewChild(Sidebar) sidebar: Sidebar;
+    onMenuButtonClicked() {
+        this.sidebar.toggle();
+    }
 }

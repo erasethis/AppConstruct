@@ -11,7 +11,10 @@ export class Sidebar {
     collapsed: boolean = false;
     constructor (private sidebarService: SidebarService) { 
         sidebarService.sidebarToggled$.subscribe(data => {
-             this.collapsed = !this.collapsed;
+            this.toggle();
         });
+    }
+    toggle () {
+        this.collapsed = !this.collapsed;
     }
 }
