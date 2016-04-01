@@ -1,9 +1,9 @@
 div {
-    width: 180px;
+    width: 200px;
     transition: all 0.25s ease-in-out;
 }
 div.collapsed {
-    width: 0;
+    width: 48px;
     transition: all 0.25s ease-in-out;
 }
 div ul {
@@ -20,7 +20,7 @@ div ul li {
 div ul a {
     display: table-cell;
     vertical-align: middle;
-    width: 180px;
+    width: 200px;
     height: 48px;
 }
 div ul li a, div ul li a:visited {
@@ -36,6 +36,5 @@ div ul li i.fa {
 }
 div.collapsed ul li {
     white-space: nowrap;
-    margin-left: -180px;
     transition: all 0.25s ease-in-out;
 }
