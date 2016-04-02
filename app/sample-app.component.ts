@@ -2,11 +2,11 @@ import { Component } from 'angular2/core';
 import { Shell } from './shell.component';
 
 @Component({
-    selector: 'x-app',
+    selector: 'sample-app',
     directives: [Shell],
-    template: '<x-shell></x-shell>'
+    templateUrl: 'app/sample-app.component.html'
 })
 
-export class App {
+export class SampleAppComponent {
 
 }
