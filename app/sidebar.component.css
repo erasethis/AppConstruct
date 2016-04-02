@@ -14,14 +14,14 @@ div ul {
 div ul li {
     white-space: nowrap;
     margin-left: 0;
-    height: 48px;
+    height: 40px;
     transition: all 0.25s ease-in-out;
 }
 div ul a {
     display: table-cell;
     vertical-align: middle;
     width: 200px;
-    height: 48px;
+    height: 40px;
 }
 div ul li a, div ul li a:visited {
     text-decoration: none;

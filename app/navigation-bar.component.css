@@ -1,5 +1,5 @@
 x-hamburger-button {
-    width: 48px;
+    min-width: 48px;
     height: 100%;  
 }
 

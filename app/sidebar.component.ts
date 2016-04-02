@@ -7,7 +7,7 @@ import { ShellService } from './shell.service';
     styleUrls: ['app/sidebar.component.css']
 })
 export class SidebarComponent {
-    collapsed: boolean = false;
+    collapsed: boolean = true;
     items: SidebarItemComponent[] = [];
     constructor (private shellService: ShellService) { 
         shellService.sidebarToggled$.subscribe(data => {
