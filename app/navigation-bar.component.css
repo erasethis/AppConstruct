@@ -1,14 +1,29 @@
-x-hamburger-button {
-    min-width: 48px;
+.button {
     height: 100%;  
+    color: #fff;
 }
 
-x-hamburger-button:hover {
+.button a:visited {
     color: #fff;
+}
+
+.button.button-24 {
+    min-width: 24px;
+}
+
+.button.button-48 {
+    min-width: 48px;
+}
+
+.app-bar .menu-button {
     background-color: #222;
 }
 
-.x-navigation-bar  {
+.app-bar .menu-button:hover {
+    background-color: #333;
+}
+
+.app-bar  {
     display: flex;
     flex-direction: row;
     flex-grow: 0;
@@ -18,6 +33,20 @@ x-hamburger-button:hover {
     line-height: 48px;
     height: 48px;
 }
-.x-navigation-bar .title {
+.app-bar .title {
     width: 100%;
 }
+
+ul.action-bar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+}
+
+.action-bar .button:hover {
+    background-color: #222;
+}
+

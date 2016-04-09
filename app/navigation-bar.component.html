@@ -1,4 +1,20 @@
-<div class='x-navigation-bar'>
-    <x-hamburger-button></x-hamburger-button>
+<section class='app-bar'>
+    <div class="menu-button button button-48" (click)="toggleSidebarLeft()">
+        <a href="#">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
     <span class="title">Title</span>
-</div>
+    <ul class="action-bar">
+        <li class="button button-48">
+            <a href="">
+                <i class="fa fa-search"></i>
+            </a>
+        </li>
+        <li class="button button-24">
+            <a href="">
+                <i class="fa fa-ellipsis-v"></i>
+            </a>
+        </li>
+    </ul>
+</section>
