@@ -7,6 +7,14 @@
     color: #fff;
 }
 
+.button.selected {
+    background-color: #7e2f31;
+}
+
+.button.selected:hover {
+    background-color: #8b4345;
+}
+
 .button.button-24 {
     min-width: 24px;
 }
@@ -16,25 +24,27 @@
 }
 
 .app-bar .menu-button {
-    background-color: #222;
+    background-color: #d13438;
+    text-align: center;
 }
 
 .app-bar .menu-button:hover {
-    background-color: #333;
+    background-color: #d6484c;
 }
 
 .app-bar  {
     display: flex;
     flex-direction: row;
     flex-grow: 0;
-    color: #eee;
-    background-color: black;
-    text-align: center;
+    color: black;
+    background-color: #f2f2f2; 
     line-height: 48px;
     height: 48px;
 }
 .app-bar .title {
     width: 100%;
+    text-align: left;
+    margin-left: 20px;
 }
 
 ul.action-bar {

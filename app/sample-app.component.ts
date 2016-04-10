@@ -1,9 +1,9 @@
 import { Component } from 'angular2/core';
-import { Shell } from './shell.component';
+import { AppComponent } from './app.component';
 
 @Component({
     selector: 'sample-app',
-    directives: [Shell],
+    directives: [AppComponent],
     templateUrl: 'app/sample-app.component.html'
 })
 

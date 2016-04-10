@@ -2,31 +2,31 @@ import { Component, Input } from 'angular2/core';
 import { NavigationService } from './navigation.service';
 
 @Component({
-    selector: "x-sidebar",
-    templateUrl: 'app/sidebar.component.html',
-    styleUrls: ['app/sidebar.component.css']
+    selector: "side-menu",
+    templateUrl: 'app/side-menu.component.html',
+    styleUrls: ['app/side-menu.component.css']
 })
-export class SidebarComponent {
+export class SideMenuComponent {
     collapsed: boolean = true;
-    items: SidebarItemComponent[] = [];
+    items: SideMenuItemComponent[] = [];
     constructor (private _navigationService: NavigationService) { 
-        _navigationService.sidebarLeftToggled$.subscribe(data => {
+        _navigationService.sideMenuToggled$.subscribe(data => {
              this.collapsed = !this.collapsed;
         });
     }
-    addItem(item: SidebarItemComponent) {
+    addItem(item: SideMenuItemComponent) {
         this.items.push(item);
     }
 }
 
 @Component({
-    selector: 'x-sidebar-item',
+    selector: 'side-menu-item',
     template: '<div>{{name}}</div>'
 })
-export class SidebarItemComponent {
+export class SideMenuItemComponent {
     @Input() name: string;
     @Input() icon: string;
-    constructor(sidebar: SidebarComponent) {
+    constructor(sidebar: SideMenuComponent) {
         sidebar.addItem(this);
     }
 }

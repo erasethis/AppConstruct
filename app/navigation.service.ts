@@ -3,10 +3,15 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class NavigationService {
-    private sidebarLeftToggledSource = new Subject();
-    sidebarLeftToggled$ = this.sidebarLeftToggledSource.asObservable();
-    
-    toggleSidebarLeft() {
-        this.sidebarLeftToggledSource.next({});
+    private sideMenuToggledSource = new Subject();
+    private contextMenuToggledSource = new Subject();
+    sideMenuToggled$ = this.sideMenuToggledSource.asObservable();   
+    contextMenuToggled$ = this.contextMenuToggledSource.asObservable(); 
+      
+    toggleSideMenu() {
+        this.sideMenuToggledSource.next({});
+    }
+    toggleContextMenu() {
+        this.contextMenuToggledSource.next({});
     }
 }
