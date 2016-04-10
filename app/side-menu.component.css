@@ -18,6 +18,7 @@
 .side-menu ul li {
     white-space: nowrap;
     height: 48px;
+    font-size: 12pt;
     transition: all 0.1s ease-in-out;
 }
 .side-menu ul a {
@@ -29,14 +30,18 @@
 .side-menu ul li a, .side-menu ul li a:visited {
     text-decoration: none;
     color: #eee;
+    font-weight: 400;
 }
 .side-menu ul li:hover {
     background-color: #404040;
 }
-.side-menu ul li i.fa {
+.side-menu ul li i {
+    display: inline-block;
     width: 48px;
-    margin-right: 10px;
+    height: 48px;
+    line-height: 48px;
     text-align: center;
+    margin-right: 12px;
 }
 .side-menu.collapsed ul li {
     white-space: nowrap;
