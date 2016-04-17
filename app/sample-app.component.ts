@@ -17,7 +17,7 @@ import { SampleContentComponent } from './sample-content.component';
     ]
 })
 @RouteConfig([
-    { path: '/sample', name: 'Sample', component: SampleContentComponent, useAsDefault: true }
+    { path: '/sample/:id', name: 'Sample', component: SampleContentComponent, useAsDefault: true }
 ])
 export class SampleAppComponent {
 
