@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 
 <head>
+    <base href="/">
     <link href="app/site.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link href="bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -16,10 +17,12 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
+        baseURL: './',
         packages: {        
           app: {
             format: 'register',
