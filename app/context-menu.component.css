@@ -1,0 +1,14 @@
+.context-menu {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    overflow-y: auto;
+    transition: all ease-in-out 0.1s;
+}
+
+.context-menu.collapsed {
+    width: 0;
+    transition: all ease-in-out 0.1s;
+}

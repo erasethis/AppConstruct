@@ -60,7 +60,8 @@ ul.action-bar {
     -webkit-margin-before: 0;
 }
 
-.action-bar .button:hover {
-    background-color: #222;
+.action-bar li.button a i {
+    color: black;
 }
+
 
